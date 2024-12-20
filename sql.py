@@ -34,8 +34,8 @@ def get_sql_chain(db):
     
   prompt = ChatPromptTemplate.from_template(template)
   
-  llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
-  # llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.3)
+  llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.3)
+
   
   def get_schema(_):
     return db.get_table_info()
@@ -98,7 +98,7 @@ with st.sidebar:
     st.text_input("Host", value="localhost", key="Host")
     st.text_input("Port", value="3306", key="Port")
     st.text_input("User", value="root", key="User")
-    st.text_input("Password", type="password", value="840140", key="Password")
+    st.text_input("Password", type="password", value="Your_Password", key="Password")
     st.text_input("Database", value="classicmodels", key="Database")
     
     if st.button("Connect"):
